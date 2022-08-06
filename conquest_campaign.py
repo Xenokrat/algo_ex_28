@@ -1,4 +1,4 @@
-def ConquestCampaign(row: int, col: int, L: int, battalion: list[int]):
+def ConquestCampaign(row: int, col: int, L: int, battalion: list[int]) -> int:
     captured_cells = set()
     cells_to_check_next = set()
     battalion_size = L * 2
@@ -10,7 +10,7 @@ def ConquestCampaign(row: int, col: int, L: int, battalion: list[int]):
 
     cells_to_check_current = captured_cells.copy()
 
-    empty_cells = row * col - L
+    empty_cells = row * col - len(cells_to_check_current)
 
     # do until there are no empty cells
     while empty_cells > 0:
