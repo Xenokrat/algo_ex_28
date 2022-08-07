@@ -1,8 +1,14 @@
 def SynchronizingTables(N: int, ids: list[int], salary: list[int]) -> list[int]:
-    salary.sort()  # sorting list of salaries
-    zipped_ids_salary = list(zip(ids, salary))
 
-    # sort list of pairs ids <--> salary by ids order
-    sorted_tuples = sorted(zipped_ids_salary, key=lambda x: x[0])
-    res = [x for _, x in sorted_tuples]  # extract salaries from list of tuples
+    # find the correct relative order for employees
+    ids_sorted = sorted(ids)
+    correct_order = [ids_sorted.index(i) for i in ids]
+
+    # rearrange all salaries according to correct order
+    salary.sort()
+    res = []
+    for pos in correct_order:
+        res.append(salary[pos])
+
     return res
+
