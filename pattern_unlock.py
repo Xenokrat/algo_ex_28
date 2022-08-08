@@ -2,7 +2,7 @@ def PatternUnlock(N: int, hits: list[int]) -> str:
     close = 1
     diagonal = 2 ** (1/2)
 
-    # # hard coding panel
+    # hard coding panel
     # 6  1  9
     # 5  2  8
     # 4  3  7
