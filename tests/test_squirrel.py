@@ -8,4 +8,3 @@ class TestSquirrel(unittest.TestCase):
         res_sq = squirrel(5)  # 5! = 1
         res_sqb = squirrel_brute_force(5)
         self.assertEquals(res_sqb, res_sq)
-

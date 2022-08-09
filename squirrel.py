@@ -10,5 +10,3 @@ def squirrel(N: int) -> int:
         res //= 10
 
     return res
-
-

@@ -18,22 +18,26 @@ def ConquestCampaign(row: int, col: int, L: int, battalion: list[int]) -> int:
         for pos in cells_to_check_current:
 
             row_pos, col_pos = pos
-            if row_pos > 1 and (row_pos - 1, col_pos) not in captured_cells:  # adding upper
+            # adding upper
+            if row_pos > 1 and (row_pos - 1, col_pos) not in captured_cells:
                 captured_cells.add((row_pos - 1, col_pos))
                 cells_to_check_next.add((row_pos - 1, col_pos))
                 empty_cells -= 1
 
-            if row_pos <= row - 1 and (row_pos + 1, col_pos) not in captured_cells:  # adding down
+            # adding down
+            if row_pos <= row - 1 and (row_pos + 1, col_pos) not in captured_cells:
                 captured_cells.add((row_pos + 1, col_pos))
                 cells_to_check_next.add((row_pos + 1, col_pos))
                 empty_cells -= 1
 
-            if col_pos > 1 and (row_pos, col_pos - 1) not in captured_cells:  # adding left
+            # adding left
+            if col_pos > 1 and (row_pos, col_pos - 1) not in captured_cells:
                 captured_cells.add((row_pos, col_pos - 1))
                 cells_to_check_next.add((row_pos, col_pos - 1))
                 empty_cells -= 1
 
-            if col_pos <= col - 1 and (row_pos, col_pos + 1) not in captured_cells:  # adding right
+            # adding right
+            if col_pos <= col - 1 and (row_pos, col_pos + 1) not in captured_cells:
                 captured_cells.add((row_pos, col_pos + 1))
                 cells_to_check_next.add((row_pos, col_pos + 1))
                 empty_cells -= 1

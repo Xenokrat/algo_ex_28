@@ -1,4 +1,5 @@
-def SynchronizingTables(N: int, ids: list[int], salary: list[int]) -> list[int]:
+def SynchronizingTables(N: int, ids: list[int],
+                        salary: list[int]) -> list[int]:
 
     # find the correct relative order for employees
     ids_sorted = sorted(ids)
@@ -11,4 +12,3 @@ def SynchronizingTables(N: int, ids: list[int], salary: list[int]) -> list[int]:
         res.append(salary[pos])
 
     return res
-

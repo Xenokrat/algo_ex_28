@@ -29,7 +29,6 @@ def WordSearch(length: int, s: str, subs: str) -> list[int]:
 
         words_lines.append(line)
 
-    # res = "".join([" ".join(line) for line in words_lines])  # this will return align text
+    # res = "".join([" ".join(line) for line in words_lines])
     res = [1 if subs in worlds_line else 0 for worlds_line in words_lines]
     return res
-
