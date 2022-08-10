@@ -53,7 +53,7 @@ def BigMinus(s1: str, s2: str) -> str:
     # 3. Delete unnecessary nulls
     res_with_nulls = res_reversed[::-1]
     null_counter = 0
-    while True:
+    while null_counter < len(res_with_nulls):
         if res_with_nulls[null_counter] == '0':
             null_counter += 1
         else:
