@@ -5,7 +5,7 @@ def Unmanned(length: int, n: int, track: list[list[int]]) -> int:
     for traffic_light in track:
 
         # if the light is further than length, should not process it
-        if traffic_light[0] > length:
+        if traffic_light[0] >= length:
             continue
 
         des_time = traffic_light[0] + awaited

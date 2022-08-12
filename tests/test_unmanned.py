@@ -13,12 +13,12 @@ class MyTestCase(unittest.TestCase):
                         [[11, 5, 5], [15, 2, 2]]
                         )
         res4 = Unmanned(10, 2,
-                        [[4, 5, 5], [15, 2, 2]]
+                        [[10, 5, 5], [15, 2, 2]]
                         )
         self.assertEqual(res1, 12)
         self.assertEqual(res2, 30)
         self.assertEqual(res3, 10)
-        self.assertEqual(res4, 11)
+        self.assertEqual(res4, 10)
 
 
 if __name__ == '__main__':
