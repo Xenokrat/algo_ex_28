@@ -22,4 +22,3 @@ class TestLineAnalysis(unittest.TestCase):
         self.assertEqual(res8, True)
         self.assertEqual(res9, True)
         self.assertEqual(res10, True)
-

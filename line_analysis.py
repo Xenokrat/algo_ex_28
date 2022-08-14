@@ -21,7 +21,3 @@ def LineAnalysis(line: str) -> bool:
         bool_arr.append(line[start:end] == template)
 
     return all(bool_arr)
-
-
-if __name__ == '__main__':
-    LineAnalysis('*..*..*..*..*..*')
