@@ -25,15 +25,13 @@ def SherlockValidString(s: str) -> bool:
         return True
 
     # 2. 2 values, can delete one char to make them equal
-    # xxxyyyzz
     elif max2_count == 1 and max2 == 1:
         return True
 
     elif max1 - max2 == 1 and (max1_count == 1):
         return True
 
-    else:
-        return False
+    return False
 
 
 def make_char_map(s) -> dict:
