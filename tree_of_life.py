@@ -1,10 +1,15 @@
 def TreeOfLife(h: int, w: int, n: int, tree: list[str]) -> list[str]:
-    # main loop
-
     parsed_tree = parse_string(tree)
-    for year in range(1, n):
-        if year % 2 == 1:
-            pass
+
+    # main loop
+    for year in range(0, n):
+        if year % 2 == 0:
+            parsed_tree = even_year(parsed_tree, h, w)
+        else:
+            parsed_tree = odd_year(parsed_tree, h, w)
+
+    parsed_to_str_tree = parse_string_back(parsed_tree)
+    return parsed_to_str_tree
 
 
 def even_year(parsed_tree: list[list[int]], h: int, w: int) -> list[list[int]]:
@@ -17,7 +22,7 @@ def even_year(parsed_tree: list[list[int]], h: int, w: int) -> list[list[int]]:
 
 def odd_year(parsed_tree: list[list[int]], h: int, w: int) -> list[list[int]]:
     # branches become older
-    new_parsed_tree = even_year(parsed_tree)
+    new_parsed_tree = even_year(parsed_tree, h, w)
 
     branches_to_del = set()
     for row in range(h):
@@ -25,7 +30,8 @@ def odd_year(parsed_tree: list[list[int]], h: int, w: int) -> list[list[int]]:
             if new_parsed_tree[row][col] > 2:
                 branches_to_del.add((row, col))
 
-    for branch in branches_to_del.copy():
+    branches_to_del_copy = branches_to_del.copy()
+    for branch in branches_to_del_copy:
         # add upper
         if branch[0] > 0:
             branches_to_del.add((branch[0] - 1, branch[1]))
@@ -42,6 +48,13 @@ def odd_year(parsed_tree: list[list[int]], h: int, w: int) -> list[list[int]]:
         if branch[1] < w - 1:
             branches_to_del.add((branch[0], branch[1] + 1))
 
+    for branch in branches_to_del:
+        row = branch[0]
+        col = branch[1]
+        new_parsed_tree[row][col] = 0
+
+    return new_parsed_tree
+
 
 def parse_string(tree: list[str]) -> list[list[int]]:
     res = []
@@ -52,7 +65,7 @@ def parse_string(tree: list[str]) -> list[list[int]]:
     return res
 
 
-def parse_string_back(tree: list[list[int]]) -> list[int]:
+def parse_string_back(tree: list[list[int]]) -> list[str]:
     res = []
     for int_line in tree:
         symbols_line = ['.' if num == 0 else '+' for num in int_line]
