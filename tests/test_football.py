@@ -3,7 +3,7 @@ from football import *
 
 
 class MyTestCase(unittest.TestCase):
-    def test_something(self):
+    def test_football(self):
         res1 = Football([1, 3, 2], 3)
         res2 = Football([3, 2, 1], 3)
         res3 = Football([1, 7, 5, 3, 9], 5)
@@ -38,7 +38,6 @@ class MyTestCase(unittest.TestCase):
         res5 = can_swap_sort([2, 4, 3, 1], 4)
         res6 = can_swap_sort([1, 2, 4, 3], 4)
         res7 = can_swap_sort([9, 5, 3, 7, 1], 5)
-
 
         self.assertTrue(res1)
         self.assertTrue(res2)
