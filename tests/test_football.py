@@ -9,12 +9,14 @@ class MyTestCase(unittest.TestCase):
         res3 = Football([1, 7, 5, 3, 9], 5)
         res4 = Football([9, 5, 3, 7, 1], 5)
         res5 = Football([1, 4, 3, 2, 5], 5)
+        res6 = Football([1, 2, 3, 4, 5], 5)
         self.assertTrue(res1)
         self.assertTrue(res2)
         self.assertTrue(res3)
         self.assertTrue(res5)
 
         self.assertFalse(res4)
+        self.assertFalse(res6)
 
     def test_can_reverse_sort(self):
         res1 = can_reverse_sort([10, 7, 5, 3, 9], 5)
@@ -24,10 +26,10 @@ class MyTestCase(unittest.TestCase):
         res5 = can_reverse_sort([9, 5, 3, 7, 1], 5)
 
         self.assertTrue(res2)
-        self.assertTrue(res3)
         self.assertTrue(res4)
 
         self.assertFalse(res1)
+        self.assertFalse(res3)
         self.assertFalse(res5)
 
     def test_can_swap_sort(self):
@@ -38,6 +40,7 @@ class MyTestCase(unittest.TestCase):
         res5 = can_swap_sort([2, 4, 3, 1], 4)
         res6 = can_swap_sort([1, 2, 4, 3], 4)
         res7 = can_swap_sort([9, 5, 3, 7, 1], 5)
+        res8 = can_swap_sort([2, 3, 4, 5, 6], 5)
 
         self.assertTrue(res1)
         self.assertTrue(res2)
@@ -47,6 +50,7 @@ class MyTestCase(unittest.TestCase):
         self.assertFalse(res4)
         self.assertFalse(res5)
         self.assertFalse(res7)
+        self.assertFalse(res8)
 
 
 if __name__ == '__main__':

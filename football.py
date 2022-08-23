@@ -16,7 +16,7 @@ def can_reverse_sort(f: list[int], n: int) -> bool:
 
     # if already sorted
     if subarray_start is None:
-        return True
+        return False
 
     # find reversed subarray endpoint
     ind = subarray_start
@@ -57,5 +57,5 @@ def can_swap_sort(f: list[int], n: int) -> bool:
         if f[ind] != f_copy[ind]:
             counter += 1
 
-    res = (counter == 0) or (counter == 2)
+    res = (counter == 2)
     return res
